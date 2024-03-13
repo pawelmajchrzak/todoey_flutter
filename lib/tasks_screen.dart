@@ -1,23 +1,26 @@
 import 'package:flutter/material.dart';
+import 'widgets/tasks_list.dart';
 
 class TasksScreen extends StatelessWidget {
+  get checkBoxValue => null;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.lightBlueAccent,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.lightBlueAccent,
-          child: Icon(Icons.add),
+        child: Icon(Icons.add),
         onPressed: () {
-          
+          //
         },
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding:
-                EdgeInsets.only(top: 60.0, left: 30.0, right: 30.0, bottom: 30.0),
+            padding: EdgeInsets.only(
+                top: 60.0, left: 30.0, right: 30.0, bottom: 30.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -53,6 +56,7 @@ class TasksScreen extends StatelessWidget {
           ),
           Expanded(
             child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 20.0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -60,6 +64,7 @@ class TasksScreen extends StatelessWidget {
                   topRight: Radius.circular(20.0),
                 ),
               ),
+              child: TasksList(),
             ),
           )
         ],
@@ -67,3 +72,6 @@ class TasksScreen extends StatelessWidget {
     );
   }
 }
+
+
+

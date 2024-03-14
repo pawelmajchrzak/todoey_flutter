@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'widgets/tasks_list.dart';
+import 'package:todoey/screens/add_task_screen.dart';
+import '../widgets/tasks_list.dart';
 
 class TasksScreen extends StatelessWidget {
-  get checkBoxValue => null;
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,10 @@ class TasksScreen extends StatelessWidget {
         backgroundColor: Colors.lightBlueAccent,
         child: Icon(Icons.add),
         onPressed: () {
-          //
+          showModalBottomSheet(
+              context: context,
+              isScrollControlled: true,
+              builder: (context) =>  AddTaskScreen());
         },
       ),
       body: Column(
